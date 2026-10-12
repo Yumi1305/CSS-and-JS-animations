@@ -1,0 +1,93 @@
+body{
+  background: linear-gradient(45deg,
+   rgba(18,18,18,1) 0%, 
+   rgb(11, 17, 57) 70%,
+   rgb(151, 63, 44)110%);
+}
+:root{
+  --transition: cubic-bezier(0.1, 0.7, 0, 1);
+}
+
+.imgs-parent{
+  position: absolute;
+  display: flex;
+  gap: 5px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  perspective: 60rem;
+}
+
+.wrapper{
+  height: 100vh;
+  position: relative;
+}
+
+.img{
+  position: relative;
+  height: 21rem;
+  width: 5.4rem;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  transition: 0.7s var(--transition);
+  cursor: pointer;
+}
+
+.clicked {
+  width: 30rem;
+}
+
+.img::after, .img::after{
+  content: '';
+  position: absolute;
+  width: 2.5px;
+  height: 100%;
+  right: -2.5px;
+}
+
+.img::after{
+  left: -2.5px;
+}
+
+.imgs-parent:hover .img:not(:hover) {
+  filter: grayscale(1) brightness(0.5);
+}
+
+.imgs-parent:hover .img:hover{
+  transform: translateZ(17.375rem);
+  filter: none;
+}
+
+.imgs-parent:hover .img:hover + *{
+  transform: translateZ(14.77rem) rotateY(35deg);
+  filter: grayscale(0.2) brightness(0.9);
+}
+.imgs-parent:hover .img:hover + * + *{
+  transform: translateZ(9.73rem) rotateY(40deg);
+  filter: grayscale(0.4) brightness(0.8);
+}
+.imgs-parent:hover .img:hover + * + * + *{
+  transform: translateZ(4.17rem) rotateY(35deg);
+  filter: grayscale(0.6) brightness(0.7);
+}
+.imgs-parent:hover .img:hover + * + * + * + *{
+  transform: translateZ(1.1rem) rotateY(25deg);
+  filter: grayscale(0.8) brightness(0.6);
+}
+.imgs-parent:hover .img:has(+ :hover){
+  transform: translateZ(14.77rem) rotateY(-35deg);
+  filter: grayscale(0.2) brightness(0.9);
+}
+.imgs-parent:hover .img:has(+ * +:hover){
+  transform: translateZ(9.73rem) rotateY(-40deg);
+  filter: grayscale(0.4) brightness(0.8);
+}
+.imgs-parent:hover .img:has(+ * + * +:hover){
+  transform: translateZ(4.17rem) rotateY(-35deg);
+  filter: grayscale(0.6) brightness(0.7);
+}
+.imgs-parent:hover .img:has(+ * + * + * +:hover){
+  transform: translateZ(1.1rem) rotateY(-25deg);
+  filter: grayscale(0.8) brightness(0.6);
+}

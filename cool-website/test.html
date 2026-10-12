@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <style>
+    .test{
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+    .test.active{
+      opacity: 1;
+    }
+  </style>
+  <div class="container"></div>
+  <button class="hi">fade in and out lol</button>
+  <script>
+    const btn = document.querySelector(".hi");
+    let active = false;
+    const info = `<div class="test">hi I should fade in and out I am going crazy</div>`
+    btn.addEventListener('click', ()=>{
+      const container = document.querySelector('.container');
+      if (!active){
+        container.innerHTML += info;
+        let text = document.querySelector('.test');
+        setTimeout(()=>{
+          text.classList.add('active');
+        }, 100);
+        
+        active = true;
+      } else{
+        let text = document.querySelector('.test');
+        text.classList.remove('active');
+        let extra = document.querySelector('.test');
+        setTimeout(()=>{
+          extra.remove();
+        }, 500)
+        active = false;
+
+      }
+      
+    })
+  </script>
+</body>
+</html>

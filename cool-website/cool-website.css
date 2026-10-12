@@ -1,0 +1,290 @@
+@font-face {
+  font-family: 'Neue-regular'; /* Name you want to use for the font */
+  src: url('../fonts/NeueHaasDisplayMediu.ttf'); /* Update the path and format */
+}
+@font-face {
+  font-family: 'Neue-bold'; /* Name you want to use for the font */
+  src: url('../fonts/NeueHaasDisplayBold.ttf'); /* Update the path and format */
+}
+@font-face {
+  font-family: 'Neue-thin'; /* Name you want to use for the font */
+  src: url('../fonts/NeueHaasDisplayLight.ttf'); /* Update the path and format */
+}
+body {
+  font-family: 'Neue-regular', sans-serif; /* Apply the custom font */
+  background-color: #c8c8c8;
+  background-image: linear-gradient(-90deg, #fcfcfc 75%, transparent 75%), linear-gradient(#fcfcfc 75%, transparent 75%);
+  background-size: 4px 4px;
+  padding: 0px;
+  margin: 0px;
+}
+
+header{
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px black solid;
+  /* border-top: 2px black solid; */
+  height: 30px;
+  align-items: center;
+}
+
+a{
+  text-decoration: none;
+  color: var(--black1);
+}
+
+:root{
+  --black1: rgb(49, 49, 49);
+  --white1: #c8c8c8;
+  --test: 0%;
+  /* --scroll-down-percentage: -100%; */
+}
+
+.instagram-logo{
+  aspect-ratio: 1/1;
+  height: 40px;
+}
+
+.svg{
+  height: 25px;
+  transform: translateY(-6px);
+}
+
+.left-side{
+  padding-right: 5px;
+}
+
+.right-side{
+  padding-left: 5px;
+}
+
+.middle{
+  font-family: 'Neue-thin';
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.middle span{
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.title-page{
+  height: 70vh;
+  width: 100%;
+  border-bottom: 1px black solid;
+  overflow: hidden;
+}
+
+.title-page .top-section{
+  height: 70%;
+  width: 100%;
+  border-bottom: 1px black solid;
+  display: flex;
+}
+
+.title-page .top-section .left-side{
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 3.5fr 1fr;
+}
+
+.title-page .top-section .right-side{
+  width: 3%;
+  background-color: var(--black1);
+  writing-mode: vertical-rl; /* Text flows vertically from right to left */
+  text-orientation: mixed; 
+  display: flex;
+  align-items: center;
+  padding-top: 10px;
+  padding-right: 3px;
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: rgb(226, 226, 226);
+}
+
+.title-page .top-section .title{
+  box-sizing: border-box;
+  padding-top: 90px;
+  padding-left: 60px;
+  font-size: 60px;
+  font-family: 'Neue-bold';
+  color: rgb(49, 49, 49);
+  height: 100%;
+  width: 100%;
+  border-right: 1px black solid;
+}
+
+.title-page .top-section .title span{
+  display: block;
+}
+
+.title-page .top-section .description {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  padding-right: 40px;
+  padding-left: 40px;
+  font-weight: bold;
+  position: relative;
+}
+
+.title-page .top-section .description .next-button{
+  position: absolute;
+  border: none;
+  right: -5px;
+  bottom: 0;
+  aspect-ratio: 1/1;
+  height: 30px;
+  background-color: var(--black1);
+  color:  white;
+}
+
+.title-page .bottom-section{
+  background-color: rgb(98, 145, 255);
+  height: 20%;
+  z-index: -100;
+}
+
+.title-page .bottom-section .description {
+  letter-spacing: 1.5px;
+  padding-top: 25px;
+  position: relative;
+  height: auto;
+}
+.title-page .bottom-section .description div{
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  font-size: 30px;
+  left: 100%;
+  animation-name: scroll-left;
+  animation-duration: 30s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-delay: calc(30s / 5 * (5 - var(--n)) * -1);
+}
+
+@keyframes scroll-left{
+  to{
+    left: -200px;
+  }
+}
+
+.picture-section{
+  width: 100%;
+  height: 70vh;
+  overflow: hidden;
+  position: relative;
+  margin-top: -50px;
+  z-index: 10;
+}
+
+.split-pictures.active div {
+  opacity: 1;
+}
+
+
+
+.picture-section .pic {
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  background-size: cover;
+  position: absolute;
+  opacity: 0;
+  background-position: 0 20px;
+  background-size: 800px;
+
+}
+
+.split-pictures .pic:nth-child(2){
+  right: 0;
+  background-position: 0 -20px;
+
+}
+
+.rect1, .rect2{
+  width: 50%;
+  height: 100%;
+  background-color: #393939;
+  position: absolute;
+  z-index: 3;
+  transform: translateY(-100%);
+}
+
+.picture-scroll-up{
+  animation: 1s picture-scroll-up forwards;
+}
+
+.picture-scroll-down{
+  animation: 1s picture-scroll-down forwards;
+}
+
+
+.scroll-down{
+  animation: 1s scroll-down both var(--seconds);
+}
+
+.scroll-down-again{
+  animation: 1s scroll-down-again both var(--seconds);
+}
+
+.rect1{
+  --seconds: 0s;
+}
+
+.rect2{
+  right: 0;
+  --seconds: 0.1s;
+}
+
+@keyframes scroll-down{
+  from {
+    transform: translateY(-100%); /* Start off-screen */
+  }
+  to {
+    transform: translateY(0%); /* Cover the image */
+  }
+}
+
+@keyframes scroll-down-again{
+  from {
+    transform: translateY(0%); /* Start at full coverage */
+  }
+  to {
+    transform: translateY(100%); /* Move off-screen downward */
+  }
+}
+
+@keyframes picture-scroll-up{
+  from{
+    background-position: 0 20px;
+  }
+  to{
+    background-position: 0 0px;
+  }
+}
+
+@keyframes picture-scroll-down{
+  from{
+    background-position: 0 -20px;
+  }
+  to{
+    background-position: 0 0px;
+  }
+}
+
+.cursor{
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: black;
+  z-index: 200;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+}

@@ -1,0 +1,153 @@
+:root{
+  --color-dark: rgb(27, 26, 26);
+  --white: rgb(242, 241, 240);
+}
+
+.blog-section{
+  margin-top: 30vh;
+  padding-top: 20vh;
+  padding-bottom: 20vh;
+  margin-bottom: 40vh;
+  position: relative;
+  background: linear-gradient(0deg, rgba(255,255,255,0) 0%, 
+    rgba(255,255,255,0) var(--percent),
+    var(--color-dark) var(--percent),
+    var(--color-dark) 100%);
+}
+
+.animate-background{
+  animation-duration: 1.2s;
+  animation-name: change-percentage;
+  animation-fill-mode: both;
+  animation-timeline: linear;
+}
+
+.animate-background-again{
+  animation-duration: 1.2s;
+  animation-name: change-percentage-again;
+  animation-fill-mode: both;
+  animation-timeline: linear;
+}
+
+@property --percent{
+  syntax: "<percentage>";
+  initial-value: 100%;
+  inherits: false;
+}
+
+@keyframes change-percentage{
+  from{
+    --percent: 100%;
+  } to{
+    --percent: 0%;
+  }
+}
+
+@keyframes change-percentage-again{
+  from{
+    --percent: 0%;
+  } to{
+    --percent: 100%;
+  }
+}
+
+.blog-container{
+  display: flex;
+  width: 100%;
+  height: 80vh;
+}
+
+.blog-section .test{
+  margin-left: 50px;
+  font-size: 50px;
+  transform: translateX(0);
+  transition: all 1s ease;
+  position: relative;
+  color: var(--white);
+}
+
+.blog-section .test::after{
+  content: '';
+  position: absolute;
+  height: 1px;
+  width: 99%;
+  background-color: var(--white);
+  bottom: -30px;
+  left: 0;
+}
+
+.move{
+  transform: translateX(0);
+}
+
+.box{
+  flex: 1;
+  position: relative;
+  padding-left: 30px;
+}
+
+.box::after{
+  content: '';
+  height: 450px;
+  border-right: 1px solid var(--white);
+  position: absolute;
+  top: 20px;
+  right: 0;
+}
+
+.box:nth-child(3)::after{
+  border: none;
+}
+
+.box .top{
+  display: flex;
+  margin-top: 30px;
+
+}
+
+.name{
+  font-size: 30px;
+  writing-mode: vertical-lr;
+  margin-right: 30px;
+  color: var(--white);
+}
+
+.image{
+  background-image: url(../3D-soda-effect/bg1.jpg);
+  background-size: 320px;
+  height: 55vh;
+  width: 70%;
+  transition: all 0.5s ease;
+  border-radius: 6px;
+}
+
+.image:hover{
+  background-size: 340px;
+}
+
+.blog-container .description{
+  margin-top: 40px;
+  width: 95%;
+  color: var(--white);
+}
+
+.description button{
+  background: none;
+  border: 1px var(--white) solid;
+  border-radius: 20px;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-size: 12px;
+  margin-bottom: 10px;
+  color: var(--white);
+}
+
+.blog-section .container{
+  overflow: hidden;
+  height: 100px;
+  transition: all 1s;
+}
+
+
+
+

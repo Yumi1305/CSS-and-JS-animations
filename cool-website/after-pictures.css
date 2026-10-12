@@ -1,0 +1,103 @@
+.information{
+  background-color: white;
+  padding-top: 30px;
+  padding-bottom: 10px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+  width: 95%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: -80px;
+  display: flex;
+  position: relative;
+  transform: translateX(100px);
+  height: 120px;
+  transition: 1s height ease;
+}
+
+
+.information .header{
+  margin-left: 20px;
+  margin-right: 20px;
+  font-size: 20px;
+}
+
+.dates ul {
+  padding-left: 10px;
+  margin-top: -2px;
+}
+
+.dates li {
+  display: flex;
+  align-items: center; /* Ensures both the date and description align at the top */
+  margin-bottom: 15px; /* Adjust spacing between items */
+}
+
+.extra-info{
+  opacity: 0;
+  color: rgb(10, 10, 10);
+  transition: opacity 0.5s ease;
+}
+
+.extra-info.visible{
+  opacity: 1;
+}
+
+.dates li::before {
+  content: '|'; /* Customize this symbol for different bullet types */
+  margin-right: 20px;
+  font-size: 20px;
+  color: #000; /* Color of the bullet */
+}
+
+.dates .date {
+  min-width: 120px; /* Adjust based on the length of your dates to ensure enough space */
+  font-weight: bold; /* Optional: make the date stand out */
+}
+
+.dates .desc {
+  flex: 1; /* Allows the description to take up remaining space */
+  color: rgb(81, 81, 81);
+}
+
+.information .expand-button{
+  border: none;
+  background: none;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-weight: bold;
+  font-size: 26px;
+  color: rgb(21, 21, 21);
+  transition: 0.3s;
+}
+
+.information .expand-button:hover{
+  color:rgb(61, 61, 61);
+}
+
+.information .expand-button:active{
+  color:rgb(220, 220, 220);
+}
+
+.fade-in{
+  animation: 1s fade-in ease;
+}
+
+@keyframes fade-in {
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  from{
+    opacity: 1;
+  }
+  to{
+    opacity: 0;
+  }
+}
+

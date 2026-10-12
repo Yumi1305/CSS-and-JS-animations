@@ -1,0 +1,49 @@
+body{
+  background-color: rgb(172, 172, 172);
+}
+
+.banner{
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.banner .product{
+  position: absolute;
+  height: 500px;
+  width: 500px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: 0.7s;
+  bottom: 70px;
+  display: flex;
+}
+
+.banner .product .soda{
+  position: absolute;
+  background: 
+  var(--url),
+  url(soda-mockup-removebg-preview.png);
+  background-size: auto 100%;
+  background-position: var(--left), 0;
+  height: 450px;
+  aspect-ratio: 10/12;
+  background-blend-mode: multiply;
+  mask-image: url(soda-mockup-removebg-preview.png);
+  mask-size: auto 100%;
+  --left: 0px;
+  transition: 0.7s;
+}
+
+.banner .product:hover .soda{
+  --left: 1250px;
+  transform: translateY(-20px);
+}
+
+.banner .product .soda:nth-child(2){
+  opacity: 0;
+}
+
+.banner .product:hover .soda:nth-child(2){
+  opacity: 1;
+}
