@@ -7,6 +7,10 @@
 </head>
 <body>
   <style>
+    body{
+      padding: 0;
+      margin: 0;
+    }
     .test{
       opacity: 0;
       transition: opacity 0.5s ease;
@@ -14,10 +18,55 @@
     .test.active{
       opacity: 1;
     }
+    .cursor{
+      position: absolute;
+      height: 20px;
+      aspect-ratio: 1/1;
+      background-color: black;
+      border-radius: 50%;
+    }
+
+    .picture-section{
+      position: relative;
+      background-color: beige;
+      height: 50vh;
+      width: 100%;
+    }
+
+    .pic{
+      position: absolute;
+      height: 50%;
+      width: 50%;
+      background-color: rgb(90, 119, 246);
+
+    }
+    
+    .pic:hover ~ .cursor{
+      background-color: red;
+    }
   </style>
+
+
   <div class="container"></div>
   <button class="hi">fade in and out lol</button>
+
+  <div class="picture-section">
+    <div class="pic"></div>
+    <div class="cursor"></div>
+  </div>
+
+
+
+
+
+
+
   <script>
+    const cursor = document.querySelector('.cursor');
+    document.addEventListener('mousemove', (el)=>{
+      cursor.style.left = el.pageX - 10 + "px";
+      cursor.style.top = el.pageY - 10 + "px";
+    })
     const btn = document.querySelector(".hi");
     let active = false;
     const info = `<div class="test">hi I should fade in and out I am going crazy</div>`

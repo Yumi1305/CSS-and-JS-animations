@@ -17,6 +17,7 @@ body {
   background-size: 4px 4px;
   padding: 0px;
   margin: 0px;
+  color:rgb(42, 42, 42)
 }
 
 header{
@@ -217,11 +218,11 @@ a{
 }
 
 .picture-scroll-up{
-  animation: 1s picture-scroll-up forwards;
+  animation: 1s picture-scroll-up both;
 }
 
 .picture-scroll-down{
-  animation: 1s picture-scroll-down forwards;
+  animation: 1s picture-scroll-down both;
 }
 
 
@@ -240,6 +241,38 @@ a{
 .rect2{
   right: 0;
   --seconds: 0.1s;
+}
+
+.whats-new{
+  box-sizing: border-box;
+  height: 260px;
+  padding: 30px;  
+  display: flex;
+
+}
+
+.whats-new .left-section{
+  font-size: 3.5em; 
+  font-weight: 700;
+  flex: 1;
+  border-right: 0.5px rgb(21, 21, 21) solid;
+  margin-top: -30px;
+  margin-bottom: -30px;
+  padding: 30px;
+}
+
+.whats-new .right-section{
+  box-sizing: border-box;
+  flex: 1;
+  padding-left: 10px;
+}
+
+.whats-new .right-section .date{
+  height: 50%;
+  border-bottom: 0.5px black solid;
+  margin-left: -10px;
+  margin-right: -10px;
+  padding-left: 10px;
 }
 
 @keyframes scroll-down{

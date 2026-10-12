@@ -1,0 +1,62 @@
+body{
+  background-color: black;
+  color: white;
+  font-family: Gaegu;
+  font-size: 34px;
+}
+
+.container{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.line{
+  display: flex;
+  justify-content: space-between;
+}
+
+.word{
+  transition: 0.2s;
+}
+
+.container:hover .word:not(:hover){
+  opacity: 0.5;
+}
+
+.letter{
+  display: inline-block;
+  transition: 0.2s;
+}
+
+.word:hover > .letter:nth-child(1){
+  transform: translate(-80%, 60%) rotate(8deg);
+}
+.word:hover > .letter:nth-child(2){
+  transform: translate(-60%, 45%) rotate(20deg);
+}
+.word:hover > .letter:nth-child(3){
+  transform: translate(-82%, 20%) rotate(2deg);
+}
+.word:hover > .letter:nth-child(4){
+  transform: translate(-40%, 25%) rotate(30deg);
+}
+.word:hover > .letter:nth-child(5){
+  transform: translate(-50%, 0%) rotate(2deg);
+}
+.word:hover > .letter:nth-child(6){
+  transform: translate(-10%, 10%) rotate(17deg);
+}
+.word:hover > .letter:nth-child(7){
+  transform: translate(-4%, 20%) rotate(17deg);
+}
+.word:hover > .letter:nth-child(8){
+  transform: translate(13%, 15%) rotate(57deg);
+}
+.word:hover > .letter:nth-child(9){
+  transform: translate(-50%, 30%) rotate(87deg);
+}
+.word:hover > .letter:nth-child(10){
+  transform: translate(14%, 35%) rotate(17deg);
+}
